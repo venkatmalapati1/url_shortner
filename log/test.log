@@ -1,0 +1,1124 @@
+  [1m[36m (0.9ms)[0m  [1mDROP DATABASE IF EXISTS `shortner_test`[0m
+  [1m[35m (0.4ms)[0m  CREATE DATABASE `shortner_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (359.9ms)[0m  [1mCREATE TABLE `urls` (`id` int(11) auto_increment PRIMARY KEY, `original` varchar(255), `short` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (354.4ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (631.1ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (55.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20170622083159')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:14:05', '2017-06-22 09:14:05')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (56.7ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:17:48', '2017-06-22 09:17:48')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (149.5ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (1.1ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '48x94r'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '48x94r' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '48x94r', '2017-06-22 09:17:49', '2017-06-22 09:17:49')
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (41.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:18:06', '2017-06-22 09:18:06')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (169.3ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (0.8ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '8v57lv'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '8v57lv' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '8v57lv', '2017-06-22 09:18:07', '2017-06-22 09:18:07')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (53.7ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:19:57', '2017-06-22 09:19:57')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (129.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (0.7ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'xscat1'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'xscat1' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'xscat1', '2017-06-22 09:19:58', '2017-06-22 09:19:58')
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (45.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUrl Load (0.7ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'vcx9ms'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 15ms (Views: 8.2ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#index as HTML
+  [1m[35mUrl Load (0.4ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1
+  Rendered url/index.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.3ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:27:10', '2017-06-22 09:27:10')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (162.2ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (0.7ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'bdsg6t'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'bdsg6t' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'bdsg6t', '2017-06-22 09:27:10', '2017-06-22 09:27:10')
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (48.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'vajivk'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.6ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 24ms (Views: 12.1ms | ActiveRecord: 2.8ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.6ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'qoqnqj'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'qoqnqj' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'qoqnqj', '2017-06-22 09:34:34', '2017-06-22 09:34:34')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/10
+Completed 302 Found in 17ms (ActiveRecord: 2.0ms)
+  [1m[36m (110.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.7ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:34:34', '2017-06-22 09:34:34')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (37.8ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (0.6ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'jvt03g'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'jvt03g' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'jvt03g', '2017-06-22 09:34:34', '2017-06-22 09:34:34')
+  [1m[36m (0.8ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (40.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'i6opq5'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 16ms (Views: 8.2ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'm4fjf5'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.3ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'm4fjf5' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'm4fjf5', '2017-06-22 09:35:47', '2017-06-22 09:35:47')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/13
+Completed 302 Found in 15ms (ActiveRecord: 1.3ms)
+  [1m[36m (54.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:35:47', '2017-06-22 09:35:47')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (144.7ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (0.7ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'bk0nj1'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'bk0nj1' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'bk0nj1', '2017-06-22 09:35:48', '2017-06-22 09:35:48')
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (49.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUrl Load (0.6ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'bcac7j'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '5qz1cy'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '5qz1cy' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '5qz1cy', '2017-06-22 09:35:59', '2017-06-22 09:35:59')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/16
+Completed 302 Found in 16ms (ActiveRecord: 1.3ms)
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (154.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:35:59', '2017-06-22 09:35:59')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (1.3ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36m (38.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `urls`[0m
+  [1m[35mUrl Load (0.7ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'r8xe53'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (1.0ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'r8xe53' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'r8xe53', '2017-06-22 09:36:00', '2017-06-22 09:36:00')[0m
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `urls`[0m
+  [1m[35m (36.5ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.7ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '7q9wzy'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'z40z34'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.3ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'z40z34' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'z40z34', '2017-06-22 09:38:12', '2017-06-22 09:38:12')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/19
+Completed 302 Found in 16ms (ActiveRecord: 1.2ms)
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (53.8ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.6ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'jww132'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'jww132' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'jww132', '2017-06-22 09:38:12', '2017-06-22 09:38:12')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/20
+Completed 302 Found in 10ms (ActiveRecord: 2.4ms)
+  [1m[36mUrl Load (0.6ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (128.7ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com1"}
+  [1m[35mUrl Load (0.7ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '91ndtc'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '91ndtc' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com1', '91ndtc', '2017-06-22 09:38:13', '2017-06-22 09:38:13')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/21
+Completed 302 Found in 11ms (ActiveRecord: 2.6ms)
+  [1m[36mUrl Load (0.5ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (41.8ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:38:13', '2017-06-22 09:38:13')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.7ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36m (39.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `urls`[0m
+  [1m[35mUrl Load (0.5ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'b2x8sl'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'b2x8sl' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'b2x8sl', '2017-06-22 09:38:13', '2017-06-22 09:38:13')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `urls`[0m
+  [1m[35m (41.1ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.8ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '3lhu5q'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 15ms (Views: 8.0ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'eiyrce'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.3ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'eiyrce' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'eiyrce', '2017-06-22 09:40:14', '2017-06-22 09:40:14')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/24
+Completed 302 Found in 15ms (ActiveRecord: 1.0ms)
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (39.9ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.6ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '8emnn6'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '8emnn6' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '8emnn6', '2017-06-22 09:40:15', '2017-06-22 09:40:15')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/25
+Completed 302 Found in 10ms (ActiveRecord: 2.7ms)
+  [1m[36mUrl Load (0.6ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (123.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com1"}
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '9awb74'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.2ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '9awb74' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com1', '9awb74', '2017-06-22 09:40:15', '2017-06-22 09:40:15')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/26
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (81.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '1nknu8'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '1nknu8' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '1nknu8', '2017-06-22 09:40:15', '2017-06-22 09:40:15')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (36.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:40:15', '2017-06-22 09:40:15')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (37.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'cxid34'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'cxid34' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'cxid34', '2017-06-22 09:40:15', '2017-06-22 09:40:15')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (46.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUrl Load (0.5ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'qv28t5'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '2kh4tz'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.3ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '2kh4tz' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '2kh4tz', '2017-06-22 09:40:52', '2017-06-22 09:40:52')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/30
+Completed 302 Found in 15ms (ActiveRecord: 1.2ms)
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (45.1ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.8ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '9h1wu'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '9h1wu' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '9h1wu', '2017-06-22 09:40:52', '2017-06-22 09:40:52')[0m
+  [1m[35m (0.6ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/31
+Completed 302 Found in 8ms (ActiveRecord: 2.6ms)
+  [1m[36mUrl Load (0.6ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (162.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com1"}
+  [1m[35mUrl Load (0.8ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'w4kd35'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'w4kd35' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com1', 'w4kd35', '2017-06-22 09:40:52', '2017-06-22 09:40:52')[0m
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/32
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms)
+  [1m[36mUrl Load (0.7ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (50.0ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.7ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'npkk1u'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'npkk1u' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'npkk1u', '2017-06-22 09:40:52', '2017-06-22 09:40:52')[0m
+  [1m[35m (0.6ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (51.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:40:52', '2017-06-22 09:40:52')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (55.0ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (0.5ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '2lo3ac'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '2lo3ac' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '2lo3ac', '2017-06-22 09:40:52', '2017-06-22 09:40:52')
+  [1m[36m (0.7ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (62.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUrl Load (0.7ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'mze31q'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 17ms (Views: 8.9ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.4ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'drp56y'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.3ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'drp56y' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'drp56y', '2017-06-22 09:41:49', '2017-06-22 09:41:49')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/36
+Completed 302 Found in 16ms (ActiveRecord: 1.2ms)
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (97.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'sg60'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.3ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'sg60' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'sg60', '2017-06-22 09:41:49', '2017-06-22 09:41:49')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/37
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (169.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com1"}
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'x8j83q'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.2ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'x8j83q' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com1', 'x8j83q', '2017-06-22 09:41:50', '2017-06-22 09:41:50')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/38
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (50.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'ty9gef'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.2ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'ty9gef' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'ty9gef', '2017-06-22 09:41:50', '2017-06-22 09:41:50')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (49.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:41:50', '2017-06-22 09:41:50')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (55.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'lmkfdi'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'lmkfdi' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'lmkfdi', '2017-06-22 09:41:50', '2017-06-22 09:41:50')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (49.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '906wf9'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 14ms (Views: 7.6ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'leidyk'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.3ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'leidyk' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'leidyk', '2017-06-22 09:42:17', '2017-06-22 09:42:17')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/42
+Completed 302 Found in 15ms (ActiveRecord: 1.1ms)
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (159.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.4ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '2d26fw'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.8ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '2d26fw' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '2d26fw', '2017-06-22 09:42:17', '2017-06-22 09:42:17')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/43
+Completed 302 Found in 8ms (ActiveRecord: 2.2ms)
+  [1m[36mUrl Load (0.5ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (164.9ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'vou84f'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.2ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'vou84f' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'vou84f', '2017-06-22 09:42:17', '2017-06-22 09:42:17')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (47.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:42:17', '2017-06-22 09:42:17')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (49.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '9v3llg'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '9v3llg' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '9v3llg', '2017-06-22 09:42:17', '2017-06-22 09:42:17')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (48.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '5vjlr'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 15ms (Views: 8.1ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.7ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'iz0b0h'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'iz0b0h' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'iz0b0h', '2017-06-22 09:42:29', '2017-06-22 09:42:29')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/47
+Completed 302 Found in 18ms (ActiveRecord: 2.2ms)
+  [1m[36mUrl Load (0.5ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (38.7ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.7ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'o8ny4f'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'o8ny4f' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'o8ny4f', '2017-06-22 09:42:29', '2017-06-22 09:42:29')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/48
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (53.0ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.5ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '4x85y6'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '4x85y6' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '4x85y6', '2017-06-22 09:42:29', '2017-06-22 09:42:29')[0m
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/49
+Completed 302 Found in 11ms (ActiveRecord: 2.0ms)
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (37.9ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.7ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'cpotco'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'cpotco' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'cpotco', '2017-06-22 09:42:29', '2017-06-22 09:42:29')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (43.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:42:29', '2017-06-22 09:42:29')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (36.5ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (0.5ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'j98bis'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'j98bis' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'j98bis', '2017-06-22 09:42:29', '2017-06-22 09:42:29')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (43.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUrl Load (0.6ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'bh3xiv'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 15ms (Views: 7.3ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '5l1hxf'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '5l1hxf' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '5l1hxf', '2017-06-22 09:42:45', '2017-06-22 09:42:45')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/53
+Completed 302 Found in 16ms (ActiveRecord: 1.3ms)
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (43.8ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.4ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'y8djdd'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.3ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'y8djdd' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'y8djdd', '2017-06-22 09:42:45', '2017-06-22 09:42:45')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/54
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (47.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.8ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '2nb8nt'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.3ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '2nb8nt' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '2nb8nt', '2017-06-22 09:42:45', '2017-06-22 09:42:45')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (48.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:42:45', '2017-06-22 09:42:45')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (49.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (0.7ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'udcxvt'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'udcxvt' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'udcxvt', '2017-06-22 09:42:45', '2017-06-22 09:42:45')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (56.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Load (0.6ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'u6yes6'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 15ms (Views: 8.1ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'cem7r4'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.3ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'cem7r4' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'cem7r4', '2017-06-22 09:43:21', '2017-06-22 09:43:21')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/58
+Completed 302 Found in 16ms (ActiveRecord: 1.2ms)
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (60.2ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.6ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '3j08xp'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '3j08xp' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '3j08xp', '2017-06-22 09:43:21', '2017-06-22 09:43:21')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/59
+Completed 302 Found in 8ms (ActiveRecord: 1.8ms)
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (160.4ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Rendered url/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35mUrl Load (0.8ms)[0m  SELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUrl Load (0.8ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '9jt9cp'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '9jt9cp' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '9jt9cp', '2017-06-22 09:43:21', '2017-06-22 09:43:21')
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (53.8ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:43:21', '2017-06-22 09:43:21')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36m (53.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `urls`[0m
+  [1m[35mUrl Load (0.7ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'zufnhk'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.7ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'zufnhk' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'zufnhk', '2017-06-22 09:43:21', '2017-06-22 09:43:21')[0m
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `urls`[0m
+  [1m[35m (62.6ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.8ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'x3vbhp'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 23ms (Views: 11.2ms | ActiveRecord: 2.1ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.7ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'zh74d9'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.7ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'zh74d9' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'zh74d9', '2017-06-22 09:43:36', '2017-06-22 09:43:36')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/63
+Completed 302 Found in 17ms (ActiveRecord: 2.5ms)
+  [1m[36mUrl Load (0.6ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (39.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'r8lqoi'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.2ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'r8lqoi' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'r8lqoi', '2017-06-22 09:43:36', '2017-06-22 09:43:36')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/64
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (36.6ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Rendered url/new.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[35mUrl Load (0.6ms)[0m  SELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUrl Load (0.6ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '3x13wh'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '3x13wh' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '3x13wh', '2017-06-22 09:43:36', '2017-06-22 09:43:36')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (37.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:43:36', '2017-06-22 09:43:36')
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.7ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36m (40.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `urls`[0m
+  [1m[35mUrl Load (0.7ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '5y8jdn'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '5y8jdn' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '5y8jdn', '2017-06-22 09:43:36', '2017-06-22 09:43:36')[0m
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `urls`[0m
+  [1m[35m (39.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.6ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'qkcmpi'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 16ms (Views: 7.9ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.4ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'vdbkrn'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'vdbkrn' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'vdbkrn', '2017-06-22 09:46:04', '2017-06-22 09:46:04')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UrlController#index as HTML
+  Parameters: {"id"=>"vdbkrn"}
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'vdbkrn'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+Redirected to https://google.com
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[35m (43.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.6ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.8ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'w458re'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'w458re' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'w458re', '2017-06-22 09:46:04', '2017-06-22 09:46:04')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/69
+Completed 302 Found in 11ms (ActiveRecord: 2.9ms)
+  [1m[36mUrl Load (0.5ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (157.1ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.8ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '7udvln'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.7ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '7udvln' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '7udvln', '2017-06-22 09:46:04', '2017-06-22 09:46:04')[0m
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/70
+Completed 302 Found in 12ms (ActiveRecord: 2.9ms)
+  [1m[36mUrl Load (0.6ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (44.8ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Rendered url/new.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35mUrl Load (0.7ms)[0m  SELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.8ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:46:04', '2017-06-22 09:46:04')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (40.3ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (0.7ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '43a085'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '43a085' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '43a085', '2017-06-22 09:46:04', '2017-06-22 09:46:04')
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (39.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUrl Load (1.5ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'g0tlz'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'qa491r'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'qa491r' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'qa491r', '2017-06-22 09:46:48', '2017-06-22 09:46:48')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UrlController#index as HTML
+  Parameters: {"id"=>"qa491r"}
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'qa491r'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+Redirected to https://google.com
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[35m (45.0ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.4ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'maj6c3'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.2ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'maj6c3' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'maj6c3', '2017-06-22 09:46:49', '2017-06-22 09:46:49')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/74
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (164.2ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[35mUrl Load (0.7ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'hsczq1'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'hsczq1' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'hsczq1', '2017-06-22 09:46:49', '2017-06-22 09:46:49')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/url/75
+Completed 302 Found in 11ms (ActiveRecord: 2.5ms)
+  [1m[36mUrl Load (0.5ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (57.0ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by UrlController#create as HTML
+  Rendered url/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35mUrl Load (0.6ms)[0m  SELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:46:49', '2017-06-22 09:46:49')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35m (58.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'g39b33'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'g39b33' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'g39b33', '2017-06-22 09:46:49', '2017-06-22 09:46:49')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `urls`
+  [1m[36m (54.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Load (0.7ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'jj5zke'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by UrlController#index as HTML
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` IS NULL  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  Rendered url/index.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 14ms (Views: 7.4ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.4ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '1m23hx'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '1m23hx' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '1m23hx', '2017-06-22 09:47:55', '2017-06-22 09:47:55')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UrlController#index as HTML
+  Parameters: {"id"=>"1m23hx"}
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '1m23hx'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+Redirected to https://google.com
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[35m (51.6ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by UrlController#index as HTML
+  Parameters: {"id"=>"123456789"}
+  [1m[35mUrl Load (0.6ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = '123456789'  ORDER BY `urls`.`id` ASC LIMIT 1
+  Rendered url/index.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UrlController#new as HTML
+  Rendered url/new.html.erb within layouts/application (0.5ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[36mUrl Load (0.7ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'v7lrmf'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'v7lrmf' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'v7lrmf', '2017-06-22 09:47:55', '2017-06-22 09:47:55')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/url/79
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms)
+  [1m[35mUrl Load (0.5ms)[0m  SELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1
+  [1m[36m (175.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+Processing by UrlController#create as HTML
+  Parameters: {"new_url"=>"https://google.com"}
+  [1m[36mUrl Load (0.9ms)[0m  [1mSELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'lqsxck'  ORDER BY `urls`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'lqsxck' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'lqsxck', '2017-06-22 09:47:55', '2017-06-22 09:47:55')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/url/80
+Completed 302 Found in 23ms (ActiveRecord: 2.9ms)
+  [1m[35mUrl Load (0.7ms)[0m  SELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1
+  [1m[36m (54.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+Processing by UrlController#create as HTML
+  Rendered url/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[36mUrl Load (0.7ms)[0m  [1mSELECT  `urls`.* FROM `urls`  ORDER BY `urls`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUrl Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', '123456789', '2017-06-22 09:47:55', '2017-06-22 09:47:55')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY '123456789' LIMIT 1
+  [1m[36m (51.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `urls`[0m
+  [1m[35mUrl Load (0.6ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'sjx5qs'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM `urls` WHERE `urls`.`short` = BINARY 'sjx5qs' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `urls` (`original`, `short`, `created_at`, `updated_at`) VALUES ('https://google.com', 'sjx5qs', '2017-06-22 09:47:55', '2017-06-22 09:47:55')[0m
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `urls`[0m
+  [1m[35m (51.6ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Load (0.8ms)[0m  SELECT  `urls`.* FROM `urls` WHERE `urls`.`short` = 'q1e1zw'  ORDER BY `urls`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
