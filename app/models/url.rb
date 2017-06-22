@@ -2,6 +2,8 @@ class Url < ActiveRecord::Base
 
   	validates_uniqueness_of :short
   	
+  	validates_presence_of :original
+  	
 	def self.add_new url
 		Url.create(original: url, short: Url.generate_hash)
 	end
