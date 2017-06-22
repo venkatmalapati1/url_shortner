@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   get '/:id', to: 'url#index'
 
+  root 'url#new'
 end
